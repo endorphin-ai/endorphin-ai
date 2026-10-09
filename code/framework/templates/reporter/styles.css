@@ -1,0 +1,583 @@
+/* Endorphin AI Test Report Styles */
+
+/* Custom Variables */
+:root {
+  --endorphin-primary: #0066cc;
+  --endorphin-success: #28a745;
+  --endorphin-danger: #dc3545;
+  --endorphin-warning: #ffc107;
+  --endorphin-info: #17a2b8;
+  --timeline-color: #dee2e6;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* Card Enhancements */
+.card {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Progress Bar Enhancements */
+.progress {
+  border-radius: 0.5rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  transition: width 0.6s ease;
+}
+
+/* Table Enhancements */
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.035);
+}
+
+.test-result-row {
+  cursor: pointer;
+}
+
+.test-result-row:hover {
+  background-color: rgba(0, 102, 204, 0.05) !important;
+}
+
+/* Badge Enhancements */
+.badge {
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+/* Button Enhancements */
+.btn-sm {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.view-details-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.view-details-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--timeline-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 70px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--endorphin-primary);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--timeline-color);
+}
+
+.timeline-item.success::before {
+  background: var(--endorphin-success);
+}
+
+.timeline-item.failure::before {
+  background: var(--endorphin-danger);
+}
+
+.timeline-content {
+  background: white;
+  border: 1px solid var(--timeline-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-step-number {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--endorphin-primary);
+}
+
+.timeline-timestamp {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.timeline-description {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.timeline-result {
+  font-size: 0.875rem;
+  color: #495057;
+  background-color: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border-left: 3px solid var(--endorphin-info);
+}
+
+.timeline-tool-call {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+}
+
+.timeline-token-usage {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #e3f2fd;
+  border-left: 3px solid #2196f3;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  color: #0d47a1;
+}
+
+/* Agent History Timeline Styles */
+.agent-history-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 2px solid #9c27b0;
+}
+
+.agent-history-item::before {
+  content: '🧠';
+  position: absolute;
+  left: -0.8rem;
+  top: 0.5rem;
+  background: white;
+  border-radius: 50%;
+  padding: 0.3rem;
+  font-size: 1rem;
+  box-shadow: 0 0 0 2px #9c27b0;
+}
+
+.agent-history-content {
+  background: #f3e5f5;
+  border: 1px solid #ce93d8;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.agent-thinking {
+  background-color: #fce4ec;
+  border-left: 3px solid #e91e63;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  font-style: italic;
+}
+
+.agent-token-info {
+  background-color: #fff3e0;
+  border-left: 3px solid #ff9800;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+}
+
+/* Screenshots Gallery */
+.screenshots-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.screenshot-thumbnail {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid #dee2e6;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.screenshot-thumbnail:hover {
+  border-color: var(--endorphin-primary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Enhancements */
+.modal-xl {
+  max-width: 90%;
+}
+
+.modal-header {
+  background-color: var(--endorphin-primary);
+  color: white;
+  border-bottom: none;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+#screenshot-viewer {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Indicators */
+.status-success {
+  color: var(--endorphin-success);
+}
+
+.status-failure {
+  color: var(--endorphin-danger);
+}
+
+.status-warning {
+  color: var(--endorphin-warning);
+}
+
+/* Search and Filter Controls */
+.input-group-text {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+#test-search {
+  border-color: #dee2e6;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+#test-search:focus {
+  border-color: var(--endorphin-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+
+#clear-search {
+  border-left: none;
+}
+
+.btn-group .btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-group .btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-group .btn.active {
+  background-color: var(--endorphin-primary);
+  border-color: var(--endorphin-primary);
+  color: white;
+  transform: none;
+}
+
+.btn-outline-success.active {
+  background-color: var(--endorphin-success);
+  border-color: var(--endorphin-success);
+}
+
+.btn-outline-danger.active {
+  background-color: var(--endorphin-danger);
+  border-color: var(--endorphin-danger);
+}
+
+#search-results-info {
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Highlight for filtered rows */
+.test-result-row.highlight {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+  border-left: 3px solid var(--endorphin-warning);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 0.5rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item::before {
+    left: 14px;
+  }
+
+  .screenshot-thumbnail {
+    width: 120px;
+    height: 80px;
+  }
+
+  .modal-xl {
+    max-width: 95%;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--endorphin-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Multi-User Test Styles */
+.user-section {
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+}
+
+.user-section h6 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.user-section .badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+}
+
+/* User-specific color coding */
+.user-section:nth-child(1) {
+  border-left: 4px solid #007bff;
+}
+
+.user-section:nth-child(2) {
+  border-left: 4px solid #28a745;
+}
+
+.user-section:nth-child(3) {
+  border-left: 4px solid #dc3545;
+}
+
+.user-section:nth-child(4) {
+  border-left: 4px solid #ffc107;
+}
+
+.user-section:nth-child(5) {
+  border-left: 4px solid #17a2b8;
+}
+
+/* Timeline modifications for multi-user */
+.user-section .timeline {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  max-height: 300px;
+}
+
+.user-section .timeline::before {
+  left: 20px;
+}
+
+.user-section .timeline-item {
+  padding-left: 50px;
+  margin-bottom: 1rem;
+}
+
+.user-section .timeline-item::before {
+  left: 14px;
+}
+
+/* Agent history modifications for multi-user */
+.user-section .agent-history-item {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.user-section .agent-history-item::before {
+  left: -0.6rem;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+}
+
+/* User badge styling in timeline items */
+.timeline-step-number .badge,
+.agent-history-content h6 .badge {
+  font-size: 0.6rem;
+  padding: 0.25rem 0.5rem;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Responsive design for multi-user sections */
+@media (max-width: 768px) {
+  .user-section {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .user-section .timeline {
+    max-height: 200px;
+  }
+  
+  .user-section .timeline-item {
+    padding-left: 35px;
+  }
+  
+  .user-section .timeline::before {
+    left: 15px;
+  }
+  
+  .user-section .timeline-item::before {
+    left: 9px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .modal,
+  .btn {
+    display: none !important;
+  }
+
+  .card {
+    border: 1px solid #000 !important;
+    break-inside: avoid;
+  }
+
+  .timeline::before {
+    background: #000 !important;
+  }
+
+  .timeline-item::before {
+    background: #000 !important;
+  }
+  
+  .user-section {
+    border: 1px solid #000 !important;
+    break-inside: avoid;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Purple color for duration card */
+.text-purple {
+  color: #6f42c1 !important;
+}
+
+/* Sortable table headers */
+.sortable {
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.sortable:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}

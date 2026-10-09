@@ -1,0 +1,43 @@
+#!/usr/bin/expect -f
+
+# Test Recorder with Expect - Interactive CLI Simulation
+# This script uses expect to properly handle interactive CLI prompts
+
+set timeout 60
+set env(FORCE_COLOR) 0
+
+# Spawn the endorphin test recorder
+spawn npx endorphin-ai run test-recorder
+
+# Handle the interactive prompts
+expect "Test ID*" { send "TEST-REC-001\r" }
+expect "Test Name*" { send "Test Recorder Location Test\r" }
+expect "Description*" { send "Verify that test recorder creates files in user project not framework\r" }
+expect "Priority*" { send "High\r" }
+expect "Tags*" { send "location,test,verification\r" }
+expect "Site URL*" { send "https://qafromla.herokuapp.com/\r" }
+expect "User ID*" { send "\r" }
+expect "Email*" { send "testuser@example.com\r" }
+expect "Password*" { send "testpassword123\r" }
+expect "First Name*" { send "Test\r" }
+expect "Last Name*" { send "User\r" }
+expect "Add custom field*" { send "\r" }
+expect "Proceed*" { send "y\r" }
+
+# Wait for browser to launch and site to load
+expect "Type your action*" { 
+    sleep 2
+    send "click the title\r" 
+}
+
+# Wait for action to complete
+sleep 3
+
+# End the recording session
+expect "Type your action*" { send "done\r" }
+
+# Wait for recording to finish
+expect eof
+
+# Exit with success
+exit 0

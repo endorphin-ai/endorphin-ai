@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Build output (keep folder but ignore contents)
+dist/*
+!dist/.gitkeep
+
+# Test results (playground runtime output)
+playground/test-results/*
+playground/test-recorder/*
+playground/test-init/*
+
+
+# Fallback: in case CLI runs from root by mistake
+test-results/*
+test-recorder/*
+test-reports/*
+test-german-init/*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools 
+coverage/
+dev-tests/development/coverage/
+dev-tests/package-tests/results/*
+dev-tests/package-tests/tmp/*
+tmp/*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+translations/*
+translations-backup/*
+
+# Accessibility tree snapshot temp directory
+.endorphin-tmp/
