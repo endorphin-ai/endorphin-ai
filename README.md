@@ -12,6 +12,10 @@ automatically.
 
 </div>
 
+📂 **The source code is open:** see the [`code/`](./code) folder.
+
+🚀 **Endorphin V2 is coming in late November 2026.**
+
 <div align="center">
   <img src="./doc/images/playwright-logo.png" alt="Playwright" height="30" />
   &nbsp;&nbsp;&nbsp;<strong>+</strong>&nbsp;&nbsp;&nbsp;
