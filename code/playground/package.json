@@ -1,0 +1,23 @@
+{
+  "name": "ai-e2e-tests",
+  "version": "1.0.0",
+  "description": "AI-powered E2E tests using Endorphin AI",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "endorphin-ai run test all",
+    "test:smoke": "endorphin-ai run test --tag smoke",
+    "test:auth": "endorphin-ai run test --tag auth",
+    "test:challenges": "endorphin-ai run test --tag challenges",
+    "test:social": "endorphin-ai run test --tag social",
+    "test:single": "endorphin-ai run test",
+    "report": "endorphin-ai generate report && endorphin-ai open report",
+    "list": "endorphin-ai list"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "endorphin-ai": "^1.0.2"
+  }
+}

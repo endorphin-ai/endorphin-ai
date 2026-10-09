@@ -1,0 +1,35 @@
+# Development files
+node_modules/
+.env
+.env.local
+.env.example
+*.log
+.DS_Store
+.vscode/
+
+# Test results and recordings  
+test-result/
+test-recorder/
+
+# Development tarballs (exclude from published package)
+dist/*.tgz
+
+# Legacy and temporary files
+legacy/
+ai-instructions/
+*.tmp
+*.temp
+
+# Development and testing (already excluded by files array)
+playground/
+dev-tests/
+test-*.js
+*.test.js
+
+# Git files
+.git/
+.gitignore
+
+# Development documentation (keep only user-facing docs)
+doc/framework-development/
+PUBLISHING-GUIDE.md
