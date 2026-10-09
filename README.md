@@ -16,6 +16,8 @@ automatically.
 
 🚀 **Endorphin V2 is coming in late November 2026.**
 
+⚡ **Endorphin Go Pro — fully local and free, with built-in AI — is coming in January 2027.**
+
 <div align="center">
   <img src="./doc/images/playwright-logo.png" alt="Playwright" height="30" />
   &nbsp;&nbsp;&nbsp;<strong>+</strong>&nbsp;&nbsp;&nbsp;
